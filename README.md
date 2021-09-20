@@ -1,2 +1,1 @@
-# hey-bitch
-fucktheuniversityofmontana
+#data the gathering
