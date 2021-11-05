@@ -1,0 +1,3 @@
+I thought it was odd that the table and the form are not displayed together. So I compiled the tableform.php to host the table and the form below it. Still not how I wanted it
+but I think it looks better that a form that then redirects to a different table. With these I can see the form and the table above it. when i submit, a row is added to the table but the form is gone.
+I am guessing i need to do a similer thing to the table.php file to contain a form still if a user wants to keep adding to the table and see the table grow all on the same page. 
