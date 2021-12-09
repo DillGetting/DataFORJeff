@@ -1,0 +1,120 @@
+dillon@dillon-VirtualBox:~$ sudo mysql -u dillon -p
+[sudo] password for dillon: 
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+Server version: 8.0.27-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use studentdatabase
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++---------------------------+
+| Tables_in_studentdatabase |
++---------------------------+
+| cmoney                    |
+| market                    |
+| trade                     |
+| trader                    |
++---------------------------+
+4 rows in set (0.00 sec)
+
+mysql> desc trade;
++----------+------+------+-----+------------+----------------+
+| Field    | Type | Null | Key | Default    | Extra          |
++----------+------+------+-----+------------+----------------+
+| id       | int  | NO   | PRI | NULL       | auto_increment |
+| sellid   | int  | YES  | MUL | NULL       |                |
+| buyid    | int  | YES  | MUL | NULL       |                |
+| coinid   | int  | YES  | MUL | NULL       |                |
+| marketid | int  | YES  | MUL | NULL       |                |
+| date     | date | NO   |     | 2021-10-14 |                |
++----------+------+------+-----+------------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from trade;
++----+--------+-------+--------+----------+------------+
+| id | sellid | buyid | coinid | marketid | date       |
++----+--------+-------+--------+----------+------------+
+|  1 |      1 |     1 |      1 |        1 | 2021-10-14 |
+|  2 |      2 |     2 |      2 |        2 | 2021-10-14 |
+|  3 |      3 |     3 |      3 |        3 | 2021-10-14 |
+|  4 |      4 |     4 |      4 |        4 | 2021-10-14 |
+|  5 |      5 |     5 |      5 |        5 | 2021-10-14 |
+|  6 |      6 |     6 |      6 |        5 | 2021-10-14 |
+|  7 |      7 |     7 |      7 |        7 | 2021-10-14 |
+|  8 |      8 |     8 |      8 |        8 | 2021-10-14 |
+|  9 |      9 |     9 |      9 |        9 | 2021-10-14 |
+| 10 |     10 |    10 |     10 |       10 | 2021-10-14 |
+| 11 |     11 |    11 |     11 |       11 | 2021-10-14 |
+| 12 |     12 |    12 |     12 |       12 | 2021-10-14 |
++----+--------+-------+--------+----------+------------+
+12 rows in set (0.00 sec)
+
+mysql> select * from trader
+    -> ;
++----+---------------------+------------+
+| id | name                | date       |
++----+---------------------+------------+
+|  1 | ted                 | 2021-10-14 |
+|  2 | ned                 | 2021-10-14 |
+|  3 | zed                 | 2021-10-14 |
+|  4 | gez                 | 2021-10-14 |
+|  5 | abed                | 2021-10-14 |
+|  6 | julian              | 2021-10-14 |
+|  7 | imdead              | 2021-10-14 |
+|  8 | what                | 2021-10-14 |
+|  9 | is                  | 2021-10-14 |
+| 10 | this                | 2021-10-14 |
+| 11 | nothowreallifeworks | 2021-10-14 |
+| 12 | disapointed         | 2021-10-14 |
++----+---------------------+------------+
+12 rows in set (0.01 sec)
+
+mysql> select * from market;
++----+-------+
+| id | name  |
++----+-------+
+|  1 | cexio |
+|  2 | cexio |
+|  3 | cexio |
+|  4 | cexio |
+|  5 | cexio |
+|  6 | cexio |
+|  7 | cexio |
+|  8 | cexio |
+|  9 | cexio |
+| 10 | cexio |
+| 11 | cexio |
+| 12 | cexio |
++----+-------+
+12 rows in set (0.00 sec)
+
+mysql> select * from cmoney;
++----+--------------+
+| id | name         |
++----+--------------+
+|  1 | CRTCoin      |
+|  2 | Copperlark   |
+|  3 | Bitcoin      |
+|  4 | Monero       |
+|  5 | Doge         |
+|  6 | Etherium     |
+|  7 | Litecoin     |
+|  8 | Bitcoincash  |
+|  9 | lsd          |
+| 10 | Ripple       |
+| 11 | CannabisCoin |
+| 12 | Quazarcoin   |
++----+--------------+
+12 rows in set (0.00 sec)
